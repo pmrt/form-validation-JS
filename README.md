@@ -74,7 +74,7 @@ You can recode this three to old syntax if you want.
 	var myValidation = new Validation(MyOptions);
 ```
 
-All parameters are optional [see the Option Reference below](#options-reference) for the defaults parameters.
+All parameters are optional [See Options reference below](#options-reference) for the defaults parameters.
 
 For example
 
