@@ -1,3 +1,5 @@
+// OPTIONS
+
 const VALID_STYLE = { color:'green', text:' ¡Válido!' },
 	  INVALID_STYLE = { color:'red', text:' ¡Inválido!' },
 	  FIELDS = { 'user' : /^[a-z][a-z0-9]{4,11}$/i,
