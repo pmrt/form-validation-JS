@@ -40,6 +40,7 @@ to:
 - ES6 new Javascript Class syntax, which may be limited
 in someway for old browsers.
 - ES6 new conditional (ternary) operator syntax
+
 You can recode this three to old syntax if you want.
 
 
