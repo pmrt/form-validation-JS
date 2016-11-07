@@ -11,7 +11,7 @@ VERSION: 1.0
 	Where field it's your new field to validate, and the label
 	validation purpose it's to show the results.
 	
-  E.g.
+  An example:
   
 ```html
 	<label for="name">Name: </label>
@@ -19,7 +19,7 @@ VERSION: 1.0
 	<label id="name-validation" for="name"></label>
 ```
 
-  Another example:
+  Another one:
 
 ```html
 	<label for="cif">CIF: </label>
@@ -28,13 +28,20 @@ VERSION: 1.0
 ```
 
 
-2. Next, add the field to the constant FIELDS with the
+2. Next, add the fields to the FIELDS of options with the
 	regular expression to validate. Regular expression
-	without quotes!
-	E.g.:
+	without quotes! [See Options reference below](#options-reference).
+	
+	Example:
   
 ```
 	'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i
+```
+
+3. That's it, just instance the class Validation:
+
+```javascript
+	myValidation = new Validation(myNewOptions);
 ```
 
 ### COMPATIBILITY :
@@ -67,7 +74,7 @@ You can recode this three to old syntax if you want.
 	var myValidation = new Validation(MyOptions);
 ```
 
-All parameters are optional see the Option Reference below for the defaults parameters.
+All parameters are optional [see the Option Reference below](#options-reference) for the defaults parameters.
 
 For example
 
@@ -107,7 +114,7 @@ For example
 	myValidation = new Validation(myNewOptions);
 ```
 
-### Options Reference:
+# Options Reference
 
 - ```VALID_STYLE : { color: <color>, text: <text> }``` Sets the style when the regular expression matches with its field value.
 - ```INVALID_STYLE: { color: <color>, text: <text>}``` Sets the style when the regular expression doesn't match with its field value.
