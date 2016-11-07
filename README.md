@@ -105,7 +105,7 @@ You can recode this three to old syntax if you want.
 	var myValidation = new Validation(MyOptions);
 ```
 
-All parameters are optional [See Options reference below](#options-reference) for the defaults parameters.
+All parameters are optional [See Options reference below](#options-reference) or [the defaults parameters](#default-options).
 
 For example
 
@@ -151,7 +151,9 @@ For example
 
 - __```VALID_STYLE : { color: '<color>', text: '<text>' }```__ Sets the style when the regular expression matches with its field value.
 - __```INVALID_STYLE: { color: '<color>', text: '<text>'}```__ Sets the style when the regular expression doesn't match with its field value.
-- __```FIELDS : { <field-name with no suffix> : <regular-expression-without-quotes> }```__ Sets the fields with its regular expressions, ```field-name``` must match with the field "id" html attrib (but plainly the name, with no suffix '-input'!) then you need the labelValidation –which will show the results– to have the same id with the suffix "-validation". Also, don't forget the "name" attrib in the html! [See How to above](#how-to).
+- __```FIELDS : { <field-name with no suffix> : <regular-expression-without-quotes> }```__ Sets the fields with its regular expressions, ```field-name``` must match with the field "id" html attrib (but plainly the name, with no suffix '-input'!).
+
+Remember: you need the label validation –which will show the results– to have the same id with the suffix "-validation". Also, don't forget the "name" attrib in the html! [See How to above](#how-to) 
 - __```VALID_ON_EVENT : <event without the 'on'>```__ You can use it in order to set the event wich will raise the validation, by default it's focusout. So it will check if the regular expression matches when the element loses the focus. Similarly, you could set it to 'keyup' in order to check if the regular expression matches every time you release a key inside the element.
 
 
