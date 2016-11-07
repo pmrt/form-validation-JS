@@ -138,10 +138,7 @@ window.onload = () => {
 		//		  }
 		//
 		//	All parameters are optional see the Validation Class
-		//	for the defaults parameters, keep in mind that in this version
-		//	the parameters are optional but the sub-parameters not. So,
-		//	that said, you can't set the FIELDS option with just the new
-		//	fields, you need to set all the subparameters.
+		//	for the defaults parameters.
 		//
 		//	Eg.
 		//
@@ -165,7 +162,7 @@ window.onload = () => {
 		//			 }
 		//	}
 		//
- 		// - This is not:
+ 		// - This is ok, too:
  		//
  		// myNewoptions = {
  		//
