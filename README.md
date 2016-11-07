@@ -1,5 +1,5 @@
 # form-validation-JS
-Form validation written in Javascript 
+Form validation written in Javascript <br>
 VERSION: 1.0
 
 # FORM VALIDATION Class
@@ -106,7 +106,7 @@ For example
 	myValidation = new Validation(myNewOptions);
 ```
 
-- This is great, too (if you want only two new fields):
+- This is great too (if you want only two new fields):
 
 ```javascript
  FIELDS : {
