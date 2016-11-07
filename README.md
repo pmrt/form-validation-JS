@@ -58,14 +58,13 @@ You can recode this three to old syntax if you want.
 	var myValidation = new Validation(MyOptions);
 ```
 
-All parameters are optional see the Option Reference below for see the defaults parameters, keep in mind that in this version
-the parameters are optional but the sub-parameters not. So that said, you can't set the FIELDS option with just the new
-fields, you need to set all the subparameters.
+All parameters are optional see the Option Reference below for the defaults parameters.
 
 For example
 
 - This is ok:
-```
+
+```javascript
 	myNewoptions = {
 
   FIELDS : {
@@ -87,9 +86,9 @@ For example
 	myValidation = new Validation(myNewOptions);
 ```
 
-- This is not:
+- This is great, too:
 
-```
+```javascript
  FIELDS : {
 			'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
 			'nickname': /^[a-z][a-z0-9]{4,11}$/i
@@ -103,12 +102,12 @@ For example
 
 - ```VALID_STYLE : { color: <color>, text: <text> }``` Sets the style when the regular expression matches with its field value.
 - ```INVALID_STYLE: { color: <color>, text: <text>}``` Sets the style when the regular expression doesn't match with its field value.
-- ```FIELDS : { <field-name> : <regular-expression-without-quotes> }``` Sets the fields and its regular expressions. Keep in mind that as mentioned above, in this version, if you add new fields you must add all the sub-parameters. Also, field-name must match with the field "id" (with the suffix "-input") and "name" (just with the name with no suffix) attribs in the html, then you need the labelValidation which will show te results to have the same id with the suffix "-validation". See How to section below.
+- ```FIELDS : { <field-name> : <regular-expression-without-quotes> }``` Sets the fields and its regular expressions, field-name must match with the field "id" (with the suffix "-input") and "name" (just with the name with no suffix) attribs in the html, then you need the labelValidation which will show te results to have the same id with the suffix "-validation". See How to section below.
 - ```VALID_ON_EVENT : <event>```. You can use it in order to set the event wich will raise the validation, by default it's focusout so it will check if the regular expression matches when the element loses the focus. Similarly, you could set it to 'keyup' in order to check if the regular expression matches every time you release a key inside the element.
 
 
 ### Default Options:
-```
+```javascript
 		options = {
 				  VALID_STYLE : { color:'green', text:' ¡Válido!' },
 				  INVALID_STYLE : { color:'red', text:' ¡Inválido!' },
