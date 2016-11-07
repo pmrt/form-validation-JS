@@ -35,7 +35,7 @@ VERSION: 1.0
 	
 	Example:
   
-```
+```javascript
 	'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i
 ```
 
@@ -65,9 +65,12 @@ You can recode this three to old syntax if you want.
 
 - You can modify the options passing them to the class Validation like this:
 
-```MyOptions = { 
+```javascript
+	
+	MyOptions = { 
 			VALID_STYLE: { color: 'blue', text: 'This is a valid test'} 
-			}```
+			}
+```
 
 - Then, you can instance the class with the new options:
 
