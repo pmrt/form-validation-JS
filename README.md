@@ -8,9 +8,11 @@ VERSION: 1.0
 # HOW TO
 1. Add the fields to the HTML with the attrib ```id="<field>-input"```, 
 	and the attrib ```name="field"```. Then add a label with 
-	the attrib id : ```<field>-validation```. Where field it's 
-	your new field to validate, and the label validation purpose
-	it's to show the results.
+	the attrib id : ```<field>-validation```. Where ```field``` is 
+	the name of your new field to validate.
+	
+	On the other hand the validation label, which you just added, goal 
+	is to show the results.
 	
   An example:
   
