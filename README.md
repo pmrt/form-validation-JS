@@ -18,8 +18,16 @@ VERSION: 1.0
   
 ```html
 	<label for="name">Name: </label>
-	<input name="name" type="text" id="name-input">
-	<label id="name-validation" for="name"></label>
+	<input name="name" type="text" id="name-input"> <!-- Required tag-->
+	<label id="name-validation" for="name"></label> <!-- Required tag-->
+	
+	<!-- Required HTML attribs: 
+		- name="<field>" inside the element with the field.
+		- id="<field>-input" inside the element with the field.
+		- id="<field>-validation" inside the label.
+		
+		Replace <field> with the desired name.
+	-->
 ```
 
   Another one:
