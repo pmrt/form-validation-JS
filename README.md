@@ -35,13 +35,28 @@ VERSION: 1.0
 	regular expression to validate. Regular expression
 	without quotes! [See Options reference below](#options-reference).
 	
-	Example:
+	Examples:
   
 ```javascript
-	'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i
+	myNewOptiona = { 	
+						FIELDS {
+									'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i
+								}
+				   }
 ```
 
-3. That's it, just instance the class Validation:
+```javascript
+	myNewOptions = { 	
+						FIELDS {
+									'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i,
+									'cif' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i
+								},
+						VALID_STYLE : { color: 'purple', text: 'Valid !' }
+				   }
+```
+
+3. That's it, just instance the class Validation passing it the custom
+options you just built:
 
 ```javascript
 	myValidation = new Validation(myNewOptions);
