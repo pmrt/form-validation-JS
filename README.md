@@ -35,7 +35,7 @@ VERSION: 1.0
 	
 	Example:
   
-```
+```javascript
 	'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i
 ```
 
@@ -65,9 +65,12 @@ You can recode this three to old syntax if you want.
 
 - You can modify the options passing them to the class Validation like this:
 
-```MyOptions = { 
+```javascript
+	
+	MyOptions = { 
 			VALID_STYLE: { color: 'blue', text: 'This is a valid test'} 
-			}```
+			}
+```
 
 - Then, you can instance the class with the new options:
 
@@ -85,7 +88,7 @@ For example
 	myNewoptions = {
 
   FIELDS : {
-				'user' : /^[a-z][a-z0-9]{4,11}$/i,
+			'user' : /^[a-z][a-z0-9]{4,11}$/i,
   			'passwd' : /^\S{7,12}$/,
   			'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i,
   			'address' : /.*/,
@@ -95,15 +98,15 @@ For example
   			'sex' : /^[a-z]*$/i,
   			'language' : /^[a-z\s]*$/i,
   			'about': /.*/,
-				'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
- 				'nickname': /^[a-z][a-z0-9]{4,11}$/i
+			'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
+ 			'nickname': /^[a-z][a-z0-9]{4,11}$/i
 			 }
 	}
 	
 	myValidation = new Validation(myNewOptions);
 ```
 
-- This is great, too:
+- This is great, too (if you want only two new fields):
 
 ```javascript
  FIELDS : {
