@@ -19,6 +19,15 @@ VERSION: 1.0
 	<label id="name-validation" for="name"></label>
 ```
 
+  Another example:
+
+```html
+	<label for="cif">CIF: </label>
+	<input name="cif" type="text" id="cif-input">
+	<label id="cif-validation" for="cif"></label>
+```
+
+
 2. Next, add the field to the constant FIELDS with the
 	regular expression to validate. Regular expression
 	without quotes!
