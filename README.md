@@ -38,12 +38,14 @@ VERSION: 1.0
 	Examples:
   
 ```javascript
-	myNewOptiona = { 	
+	myNewOptions = { 	
 						FIELDS {
 									'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i
 								}
 				   }
 ```
+
+or
 
 ```javascript
 	myNewOptions = { 	
