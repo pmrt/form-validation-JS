@@ -11,7 +11,7 @@ VERSION: 1.0
 	the attrib id : ```<field>-validation```. Where ```field``` is 
 	the name of your new field to validate.
 	
-	On the other hand that validation label, which you just added, 
+	That validation label, which you just added, 
 	is needed in order to properly show the results.
 	
   An example:
