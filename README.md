@@ -106,7 +106,7 @@ For example
 	myValidation = new Validation(myNewOptions);
 ```
 
-- This is great, too:
+- This is great, too (if you want only two new fields):
 
 ```javascript
  FIELDS : {
