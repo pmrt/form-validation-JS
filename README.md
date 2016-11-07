@@ -128,7 +128,9 @@ For example
 - This is great too (if you want only two new fields):
 
 ```javascript
- FIELDS : {
+	myNewOptions = {
+
+	 FIELDS : {
 			'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
 			'nickname': /^[a-z][a-z0-9]{4,11}$/i
 			}
