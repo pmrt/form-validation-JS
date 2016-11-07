@@ -1,24 +1,5 @@
-// OPTIONS
-
-const VALID_STYLE = { color:'green', text:' ¡Válido!' },
-	  INVALID_STYLE = { color:'red', text:' ¡Inválido!' },
-	  FIELDS = { 'user' : /^[a-z][a-z0-9]{4,11}$/i,
-	  			'passwd' : /^\S{7,12}$/,
-	  			'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i,
-	  			'address' : /.*/,
-	  			'country' : /^[a-z]*$/i,
-	  			'zipcode' : /^[\d]*$/i,
-	  			'email' : /^[-a-zA-Z0-9\_\S.]*[@].*[.].*$/i,
-	  			'sex' : /^[a-z]*$/i,
-	  			'language' : /^[a-z\s]*$/i,
-	  			'about': /.*/ },
-	  VALID_ON_EVENT = "focusout";
-
-
 class Validation {
-
 /*
-
 	FORM VALIDATION Class
 	AUTHOR : Pedro J. Martínez Martínez
 
@@ -61,14 +42,32 @@ class Validation {
 	- ES6 new conditional (ternary) operator syntax
 
 	You can recode this three to old syntax if you want.
-
 */
-	constructor(){
+	constructor(newOptions={}){
 		/*
 			Get the FIELDS JSON Keys into fields,
 			load the Fields and the Events.
+
+			Also, I declare options inside
+			the constructor setting default options.
 		*/
-		this.fields = Object.keys(FIELDS);
+		this.options = {
+				  VALID_STYLE : newOptions.VALID_STYLE || { color:'green', text:' ¡Válido!' },
+				  INVALID_STYLE : newOptions.INVALID_STYLE || { color:'red', text:' ¡Inválido!' },
+				  FIELDS : newOptions.FIELDS || { 'user' : /^[a-z][a-z0-9]{4,11}$/i,
+				  			'passwd' : /^\S{7,12}$/,
+				  			'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i,
+				  			'address' : /.*/,
+				  			'country' : /^[a-z]*$/i,
+				  			'zipcode' : /^[\d]*$/i,
+				  			'email' : /^[-a-zA-Z0-9\_\S.]*[@].*[.].*$/i,
+				  			'sex' : /^[a-z]*$/i,
+				  			'language' : /^[a-z\s]*$/i,
+				  			'about': /.*/ },
+				  VALID_ON_EVENT : newOptions.VALID_ON_EVENT || "focusout"
+			}
+
+		this.fields = Object.keys(this.options.FIELDS);
 		this.loadFields();
 		this.loadEvents();
 	}
@@ -91,7 +90,7 @@ class Validation {
 		var that = this;
 
 		for (let variable of this.fields) {
-			window[variable + 'Input'].addEventListener(VALID_ON_EVENT, function(event){
+			window[variable + 'Input'].addEventListener(this.options.VALID_ON_EVENT, function(event){
 				that.validField(event);
 			});
 		}
@@ -106,7 +105,7 @@ class Validation {
 		var fieldName = fieldElement.name;
 		var validationLb = window[fieldName + "Validation"];
 
-		this.checkPattern(FIELDS[fieldName], fieldElement.value, validationLb);
+		this.checkPattern(this.options.FIELDS[fieldName], fieldElement.value, validationLb);
 	}
 
 	changeStyle(element, style) {
@@ -124,15 +123,62 @@ class Validation {
 			show the results through validationLabel
 			element.
 		*/
-		this.changeStyle(validationLb, pattern.test(value) ? VALID_STYLE : INVALID_STYLE);
+		this.changeStyle(validationLb, pattern.test(value) ? this.options.VALID_STYLE : this.options.INVALID_STYLE);
 	}
 
 }
 
-
 window.onload = () => {
-	/*
-		Initializer.
-	*/
+		//	Initializer.
+		//
+		//	You can modify the options passing 'em
+		//	to the class Validation like this:
+		//
+		//	options = { VALID_STYLE: { color: 'blue', text: 'This is a valid test'}
+		//		  }
+		//
+		//	All parameters are optional see the Validation Class
+		//	for the defaults parameters, keep in mind that in this version
+		//	the parameters are optional but the sub-parameters not. So,
+		//	that said, you can't set the FIELDS option with just the new
+		//	fields, you need to set all the subparameters.
+		//
+		//	Eg.
+		//
+		// - This is ok:
+		//
+		//	myNewoptions = {
+		//
+		//  FIELDS : {
+		//				'user' : /^[a-z][a-z0-9]{4,11}$/i,
+		//  			'passwd' : /^\S{7,12}$/,
+		//  			'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i,
+		//  			'address' : /.*/,
+		//  			'country' : /^[a-z]*$/i,
+		//  			'zipcode' : /^[\d]*$/i,
+		//  			'email' : /^[-a-zA-Z0-9\_\S.]*[@].*[.].*$/i,
+		//  			'sex' : /^[a-z]*$/i,
+		//  			'language' : /^[a-z\s]*$/i,
+		//  			'about': /.*/,
+		//				'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
+ 		//				'nickname': /^[a-z][a-z0-9]{4,11}$/i
+		//			 }
+		//	}
+		//
+ 		// - This is not:
+ 		//
+ 		// myNewoptions = {
+ 		//
+ 		// FIELDS : {
+ 		//			'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
+ 		//			'nickname': /^[a-z][a-z0-9]{4,11}$/i
+ 		//			}
+ 		//	}
+ 		//
+ 		// Then, just instance it like this
+ 		//
+ 		//	myValidation = new Validation(myNewOptions);
+ 		//
+
 	validation = new Validation();
 };
