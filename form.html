@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Form</title>
+	<script src="validation.js"></script>
+</head>
+<body>
+
+<div id="content">
+	<h1>Registration Form</h1>
+<form action="">
+	<label for="user">User: </label>
+	<input name="user" type="text" id="user-input">
+	<label id="user-validation" for="user"></label><br><br>
+
+	<label for="passwd">Password: </label>
+	<input name="passwd" type="password" id="passwd-input">
+	<label id="passwd-validation" for="passwd"></label><br><br>
+
+	<label for="name">Name: </label>
+	<input name="name" type="text" id="name-input">
+	<label id="name-validation" for="name"></label><br><br>
+
+	<label for="address">Address: </label>
+	<input name="address" type="text" id="address-input">
+	<label id="address-validation" for="address"></label><br><br>
+
+	<label for="country">Country: </label>
+	<select name="country" id="country-input">
+		<option value="spain">Spain</option>
+		<option value="germany">Germany</option>
+	</select>
+	<label id="country-validation" for="country"></label><br><br>
+
+	<label for="zipcode">Zipcode: </label>
+	<input name="zipcode" type="text" id="zipcode-input">
+	<label id="zipcode-validation" for="zipcode"></label><br><br>
+
+	<label for="email">Email: </label>
+	<input name="email" type="text" id="email-input">
+	<label id="email-validation" for="email"></label><br><br>
+
+	<label for="sex">Sex: </label>
+	<input type="radio" name="sex" value="male" id="sex-input">Male
+	<input type="radio" name="sex" value="female" id="sex-input">Female
+	<label id="sex-validation" for="sex"></label><br><br>
+
+	<label for="language">Language: </label>
+	<input type="checkbox" name="language" id="language-input">English
+	<input type="checkbox" name="language" id="language-input">Non English
+	<label id="language-validation" for="language"></label><br><br>
+
+	<label for="about">About: </label>
+	<textarea name="about" id="about-input" cols="30" rows="10"></textarea>
+	<label id="about-validation" for="about"></label><br><br>
+</form>
+</div>
+
+</body>
+</html>
