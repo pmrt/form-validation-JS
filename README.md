@@ -85,7 +85,7 @@ For example
 	myNewoptions = {
 
   FIELDS : {
-				'user' : /^[a-z][a-z0-9]{4,11}$/i,
+			'user' : /^[a-z][a-z0-9]{4,11}$/i,
   			'passwd' : /^\S{7,12}$/,
   			'name' : /^[a-z\s\u00E0-\u00FC]{3,25}$/i,
   			'address' : /.*/,
@@ -95,8 +95,8 @@ For example
   			'sex' : /^[a-z]*$/i,
   			'language' : /^[a-z\s]*$/i,
   			'about': /.*/,
-				'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
- 				'nickname': /^[a-z][a-z0-9]{4,11}$/i
+			'myuser' : /^[a-z][a-z0-9]{4,11}$/i,
+ 			'nickname': /^[a-z][a-z0-9]{4,11}$/i
 			 }
 	}
 	
